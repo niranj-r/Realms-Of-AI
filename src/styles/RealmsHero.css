@@ -1,0 +1,89 @@
+/* ===============================
+   ROOT
+================================ */
+.realms-hero {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ===============================
+   INNER WRAPPER
+================================ */
+.realms-hero-inner {
+  width: 92%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===============================
+   LEFT CONTENT
+================================ */
+.realms-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.realms-title-img {
+  width: 55vw;   /* tuned to match screenshot */
+  height: auto;
+}
+
+.realms-subtitle-img {
+  width: 260px;
+  margin-top: 18px;
+  height: auto;
+}
+
+/* ===============================
+   RIGHT IMAGE
+================================ */
+.realms-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48vh;
+}
+
+.realms-hero-img {
+  width: 90%;
+  display: block;
+}
+
+
+/* ===============================
+   MOBILE — ANDROID COMPACT
+================================ */
+@media (max-width: 768px) {
+  .realms-hero-inner {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .realms-text {
+    align-items: center;
+  }
+
+  .realms-title-img {
+    width: 320px;
+  }
+
+  .realms-subtitle-img {
+    width: 200px;
+    margin-top: 14px;
+  }
+
+  .realms-hero-img {
+    height: 380px;
+    margin-top: 28px;
+  }
+}
