@@ -44,6 +44,7 @@ const Countdown = () => {
                 alt="Time Left"
                 className="countdown-title-img"
             />
+            <div className="about-bottom-bg"></div>
 
             <div className="timer">
                 <div>
