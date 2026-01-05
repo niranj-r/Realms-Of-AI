@@ -12,10 +12,10 @@
 .about-section {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(135deg, #2a0a4a, #3b0f6f, #1a0633);
+  background: linear-gradient(135deg, #2A0759, #2A0759, #1a0633);
   display: flex;
   align-items: center;
-  padding: 80px 100px;
+  padding: 0px 100px;
   overflow: hidden;
   color: #ffffff;
 }
@@ -25,27 +25,59 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(78,0,128, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(78,0,128, 0.5) 1px, transparent 1px);
   background-size: 80px 80px;
   pointer-events: none;
 }
 
+.about-line {
+  position: absolute;
+  top: 1vh;
+  left: 0;
+  width: 100%;
+  height: 1vh;
+  background: #ffffff;
+  z-index: 5;
+}
+
+.about-bottom-line {
+  position: absolute;
+  bottom: 1vh;
+  left: 0;
+  width: 100%;
+  height: 1vh;
+  background: #ffffff;
+  z-index: 5;
+}
+
+.about-bottom-line-violet {
+  position: absolute;
+  bottom: 0vh;
+  left: 0;
+  width: 100%;
+  height: 1vh;
+  background: #2A0759;
+  z-index: 5;
+}
+
 /* Content */
 .about-content {
-  max-width: 600px;
+  max-width: 800px;
   z-index: 2;
+    text-align: justify;
 }
 
 .about-title {
-  font-size: 72px;
-  letter-spacing: 6px;
+  font-size: 50px;
+  letter-spacing: 5px;
   margin-bottom: 20px;
 }
 
 .about-a {
-  color: #c77dff;
+  color: #F8CFFF;
   font-weight: 800;
+  font-size: 100px;
 }
 
 .about-subtitle {
@@ -56,10 +88,11 @@
 }
 
 .about-text {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.8;
   color: #e0d7ff;
   margin-bottom: 18px;
+  font-weight: 200;
 }
 
 /* Image */
@@ -78,9 +111,81 @@
 
 .about-title {
   font-family: 'Astra', sans-serif;
+  color: #F8CFFF;
 }
 
 .about-text,
 .about-subtitle {
   font-family: 'Poppins', sans-serif;
+}
+
+.about-bottom-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* adjust based on design */
+  background-image: url('../assets/about-texture.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+/* =========================
+   MOBILE RESPONSIVENESS
+   ========================= */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 40px 40px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .about-content {
+    max-width: 100%;
+    text-align: justify;
+  }
+
+  .about-title {
+    font-size: 30px;
+    letter-spacing: 4px;
+  }
+
+  .about-a {
+    font-size: 60px;
+  }
+
+  .about-subtitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* Character image moves BELOW text */
+  .about-image-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-image-wrapper img {
+    width: 85%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  /* Bottom background stays subtle */
+  .about-bottom-bg {
+    height: 100px;
+    background-position: center bottom;
+    background-size: cover;
+  }
 }
