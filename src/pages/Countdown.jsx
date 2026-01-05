@@ -36,37 +36,38 @@ const Countdown = () => {
     return (
         <section className="countdown-section">
             <div className="countdown-grid"></div>
+            <div className="countdown-grid-flex">
+                <img src={face} alt="AI Face" className="countdown-face" />
 
-            <img src={face} alt="AI Face" className="countdown-face" />
+                <img
+                    src={timeLeftImg}
+                    alt="Time Left"
+                    className="countdown-title-img"
+                />
 
-            <img
-                src={timeLeftImg}
-                alt="Time Left"
-                className="countdown-title-img"
-            />
+                <div className="timer">
+                    <div>
+                        <span>{time.days}</span>
+                        <p>Days</p>
+                    </div>
+                    <span className="colon">:</span>
 
-            <div className="timer">
-                <div>
-                    <span>{time.days}</span>
-                    <p>Days</p>
-                </div>
-                <span className="colon">:</span>
+                    <div>
+                        <span>{time.hours}</span>
+                        <p>Hours</p>
+                    </div>
+                    <span className="colon">:</span>
 
-                <div>
-                    <span>{time.hours}</span>
-                    <p>Hours</p>
-                </div>
-                <span className="colon">:</span>
+                    <div>
+                        <span>{time.minutes}</span>
+                        <p>Minutes</p>
+                    </div>
+                    <span className="colon">:</span>
 
-                <div>
-                    <span>{time.minutes}</span>
-                    <p>Minutes</p>
-                </div>
-                <span className="colon">:</span>
-
-                <div>
-                    <span>{time.seconds}</span>
-                    <p>Seconds</p>
+                    <div>
+                        <span>{time.seconds}</span>
+                        <p>Seconds</p>
+                    </div>
                 </div>
             </div>
         </section>
