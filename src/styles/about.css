@@ -1,3 +1,14 @@
+/* Astra – Local OTF Font */
+@font-face {
+  font-family: 'Astra';
+  src: url('../assets/fonts/Astra.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Poppins – Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 .about-section {
   position: relative;
   min-height: 100vh;
@@ -63,4 +74,13 @@
 .about-image-wrapper img {
   height: 100%;
   object-fit: contain;
+}
+
+.about-title {
+  font-family: 'Astra', sans-serif;
+}
+
+.about-text,
+.about-subtitle {
+  font-family: 'Poppins', sans-serif;
 }
