@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "../styles/Events.css";
 
 import EventsTitle from "../assets/headings/events-title.png";
@@ -5,25 +6,23 @@ import RealmsTitle from "../assets/headings/realms-of-ai.png";
 
 import Event1Img from "../assets/cards/event1-image.png";
 import Event1Title from "../assets/cards/event1-title.png";
-import Event1Sub from "../assets/cards/event1-subtitle.png";
 
 import Event2Img from "../assets/cards/event2-image.png";
 import Event2Title from "../assets/cards/event2-title.png";
-import Event2Sub from "../assets/cards/event2-subtitle.png";
 
 import Event3Img from "../assets/cards/event3-image.png";
 import Event3Title from "../assets/cards/event3-title.png";
-import Event3Sub from "../assets/cards/event3-subtitle.png";
 
 import FooterImg from "../assets/footer/pixel-plot-hack.png";
 
 export default function Events() {
-    return (
-        <section className="events-section">
-            <div className="events-grid-overlay"></div>
-            <div className="events-line"></div>
-            <div className="events-container">
 
+    return (
+        <section className="events-section" id="events">
+
+            <div className="events-line"></div>
+            <div className="events-grid-overlay"></div>
+            <div className="events-container">
                 {/* HEADER */}
                 <div className="events-header">
                     <img src={EventsTitle} alt="Events" className="events-heading" />
@@ -32,7 +31,6 @@ export default function Events() {
 
                 {/* CARDS */}
                 <div className="events-cards">
-
                     <div className="event-card">
                         <img src={Event1Img} className="event-image" alt="" />
                         <div className="event-text">
@@ -53,7 +51,6 @@ export default function Events() {
                             <img src={Event3Title} className="event-title" alt="" />
                         </div>
                     </div>
-
                 </div>
 
                 {/* FOOTER */}
@@ -61,6 +58,7 @@ export default function Events() {
                     <img src={FooterImg} alt="Pixel Plot Hack" />
                 </div>
             </div>
+
             <div className="events-bottom-line"></div>
             <div className="events-bottom-line-violet"></div>
         </section>
