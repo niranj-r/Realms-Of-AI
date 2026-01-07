@@ -4,7 +4,8 @@ import character from "../assets/about-character.png";
 
 const About = () => {
     return (
-        <section className="about-section">
+        <section className="about-section" id="about">
+
                 <div className="about-line"></div>
                 <div className="about-grid-overlay"></div>
 

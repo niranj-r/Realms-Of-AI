@@ -34,7 +34,7 @@ const Countdown = () => {
     }, []);
 
     return (
-        <section className="countdown-section">
+       <section className="countdown-section" id="countdown">
             <div className="countdown-grid"></div>
             <div className="countdown-grid-flex">
                 <img src={face} alt="AI Face" className="countdown-face" />
