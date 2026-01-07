@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'Astra';
+  src: url('../assets/fonts/Astra.otf') format('opentype');
+}
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grid */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 90px 90px;
+}
+
+/* Title */
+.hero-title {
+  font-family: 'Astra', sans-serif;
+  font-size: 120px;
+  color: #6a0dad;
+  letter-spacing: 6px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Robot */
+.hero-robot {
+  position: absolute;
+  bottom: 0;
+  height: 75%;
+  z-index: 3;
+}
+
+/* Bottom strip */
+.hero-bottom {
+  position: absolute;
+  font-size: 20px;
+  bottom: 12px;
+  font-family: 'Astra', sans-serif;
+  letter-spacing: 2px;
+  color: #6a0dad;
+  text-shadow: #6a0dad 1px 1px 0px;
+  z-index: 4;
+}
+
+.hero-bottom span {
+  margin: 0 10px;
+}
+
+.hero-title-img {
+   /* desktop size */
+  z-index: 2;
+  margin-bottom: 120px;
+}
+
+.hero-bottom-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 190px;
+  background-image: url('../assets/hero-banner.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+
+  /* Title image */
+  .hero-title-img {
+    width: 350px;
+    margin-bottom: 225px;
+  }
+
+/* Robot */
+.hero-robot {
+  position: absolute;
+  height: 82%;
+  bottom: 0;
+  left: 42%;                 /* 🔥 center horizontally */
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+
+  /* Bottom text */
+  .hero-bottom {
+    font-size: 12px;
+    bottom: 16px;
+    letter-spacing: 3px;
+  }
+}
+
