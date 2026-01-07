@@ -68,6 +68,70 @@
   text-align: justify;
 }
 
+.about-content,
+.about-image-wrapper img,
+.about-line,
+.about-bottom-line,
+.about-bottom-line-violet {
+  opacity: 0;
+}
+
+.about-section.animate .about-content {
+  animation: contentIn 0.9s ease-out forwards;
+}
+
+.about-section.animate .about-image-wrapper img {
+  animation: imageIn 1s ease-out forwards;
+}
+
+.about-section.animate .about-line,
+.about-section.animate .about-bottom-line,
+.about-section.animate .about-bottom-line-violet {
+  animation: lineReveal 0.8s ease-out forwards;
+}
+
+@keyframes contentIn {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes imageIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes lineReveal {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes aboutLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .about-title {
   font-size: 50px;
   letter-spacing: 5px;
@@ -123,7 +187,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 200%;
   height: 100px;
   /* adjust based on design */
   background-image: url('../assets/about-texture.png');
@@ -132,6 +196,7 @@
   background-size: cover;
   z-index: 0;
   pointer-events: none;
+   animation: aboutLoop 22s linear infinite;
 }
 
 /* =========================

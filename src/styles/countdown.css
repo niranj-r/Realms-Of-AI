@@ -110,6 +110,9 @@
   padding-top: 2.5vh;
   width: 100%;
 }
+.countdown-grid-flex{
+  opacity: 0;
+}
 
 .countdown-grid-flex{
   display: flex;
@@ -118,6 +121,28 @@
   flex-direction: column;
   max-width: 82.5%;
 }
+/* Initial state (hidden) */
+.countdown-grid-flex {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* Animate ONLY when section has .animate */
+.countdown-section.animate .countdown-grid-flex {
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 @media (max-width: 780px) {
   .countdown-title {

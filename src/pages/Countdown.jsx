@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/countdown.css";
 import face from "../assets/ai-face.png";
 import timeLeftImg from "../assets/time-left.png";
 
 const Countdown = () => {
+    const countdownRef = useRef(null);
+    const [animate, setAnimate] = useState(false);
+
     // SET EVENT DATE HERE
     const eventDate = new Date("2026-02-01T09:00:00").getTime();
 
@@ -33,8 +36,29 @@ const Countdown = () => {
         return () => clearInterval(timer);
     }, []);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setAnimate(true);
+                    observer.disconnect(); // run once
+                }
+            },
+            { threshold: 0.3 }
+        );
+
+        if (countdownRef.current) observer.observe(countdownRef.current);
+
+        return () => observer.disconnect();
+    }, []);
+
+
     return (
-       <section className="countdown-section" id="countdown">
+        <section
+            ref={countdownRef}
+            className={`countdown-section ${animate ? "animate" : ""}`}
+            id="countdown"
+        >
             <div className="countdown-grid"></div>
             <div className="countdown-grid-flex">
                 <img src={face} alt="AI Face" className="countdown-face" />
@@ -44,7 +68,7 @@ const Countdown = () => {
                     alt="Time Left"
                     className="countdown-title-img"
                 />
-            <div className="timer-bottom-bg"></div>
+                <div className="timer-bottom-bg"></div>
 
                 <div className="timer">
                     <div>
