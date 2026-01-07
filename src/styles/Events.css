@@ -1,66 +1,74 @@
 /* ===============================
+   GLOBAL SAFETY
+================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ===============================
    ROOT
 ================================ */
 .events-section {
+  position: relative;
   min-height: 100vh;
   background: #2A0759;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; /* hard safety */
 }
 
 /* Grid overlay */
 .events-grid-overlay {
-  position: relative;
+  position: absolute;
   inset: 0;
   background-image:
     linear-gradient(rgba(78, 0, 128, 0.5) 1px, transparent 1px),
     linear-gradient(90deg, rgba(78, 0, 128, 0.5) 1px, transparent 1px);
   background-size: 80px 80px;
   pointer-events: none;
-  z-index: 7;
+  z-index: 1;
+}
+
+/* Top & Bottom Lines */
+.events-line,
+.events-bottom-line,
+.events-bottom-line-violet {
+  width: 100%;
+  height: 1vh;
+  z-index: 5;
 }
 
 .events-line {
-  position: relative;
-  top: 1vh;
-  left: 0;
-  width: 100%;
-  height: 1vh;
   background: #ffffff;
-  z-index: 5;
+  margin-top: 1vh;
+  z-index: 2;
 }
 
 .events-bottom-line {
-  position: relative;
-  bottom: 1vh;
-  left: 0;
-  width: 100%;
-  height: 1vh;
   background: #ffffff;
-  z-index: 5;
+  margin-bottom: 1vh;
 }
 
 .events-bottom-line-violet {
-  position: relative;
-  bottom: 0vh;
-  left: 0;
-  width: 100%;
-  height: 1vh;
   background: #2A0759;
-  z-index: 5;
+  z-index: 2;
 }
 
 /* ===============================
    CONTAINER
 ================================ */
 .events-container {
-  margin: 3.5rem 0;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 5vw;
+  margin: 3.5rem auto;
   display: flex;
   flex-direction: column;
   gap: 2.5vh;
-  width: 86%;
+  z-index: 2;
 }
 
 /* ===============================
@@ -70,32 +78,35 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .events-heading {
   height: 6.25vw;
-  left: -20px;
+  max-height: 90px;
 }
 
 .events-brand {
   height: 4.5vw;
+  max-height: 70px;
 }
 
 /* ===============================
-   CARDS
+   CARDS (DEFAULT: HORIZONTAL)
 ================================ */
 .events-cards {
   display: flex;
-  justify-content: space-between;
-  gap: 75px;
-  align-items: center;
+  justify-content: center;
+  align-items: stretch;
+  gap: 48px;
+  width: 100%;
 }
 
 .event-card {
   background: #f4eaff;
   border-radius: 18px;
-  padding: 25px 25px 30px 25px;
-  width: 100%;
+  padding: 25px 25px 30px;
+  flex: 1 1 300px;
   max-width: 380px;
   display: flex;
   flex-direction: column;
@@ -110,18 +121,12 @@
 .event-text {
   margin-top: 16px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
+  justify-content: center;
 }
 
 .event-title {
-    padding-top: 1.5vh;
+  padding-top: 1.5vh;
   height: 11vh;
-}
-
-.event-subtitle {
-  height: 14px;
 }
 
 /* ===============================
@@ -130,9 +135,188 @@
 .events-footer {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .events-footer img {
   height: 2.5vh;
   padding-top: 3.5vh;
+}
+
+/* =====================================================
+   RESPONSIVE — STILL HORIZONTAL (≥ 480px)
+===================================================== */
+
+/* ≤ 1200px */
+@media (max-width: 1200px) {
+  .events-heading { height: 7vw; }
+  .events-brand { height: 5.5vw; }
+
+  .events-cards {
+    gap: 36px;
+  }
+
+  .event-card {
+    max-width: 340px;
+  }
+}
+
+/* ≤ 1024px */
+@media (max-width: 1024px) {
+  .events-container {
+    padding: 0 5vw;
+  }
+
+  .events-heading { height: 8vw; }
+  .events-brand { height: 6vw; }
+
+  .event-card {
+    flex: 1 1 280px;
+    max-width: 320px;
+  }
+}
+
+/* ≤ 768px — FIXED BREAKPOINT */
+@media (max-width: 768px) {
+  .events-container {
+    padding: 0 6vw; /* critical fix */
+  }
+
+  .events-cards {
+    gap: 24px;
+  }
+
+  .event-card {
+    flex: 1 1 240px;
+    max-width: 280px;
+  }
+
+  .event-title {
+    height: 9vh;
+  }
+}
+
+/* ≤ 600px — still horizontal, fully contained */
+@media (max-width: 600px) {
+  .events-container {
+    padding: 0 6vw;
+  }
+
+  .events-cards {
+    gap: 20px;
+  }
+
+  .event-card {
+    flex: 1 1 220px;
+    max-width: 260px;
+  }
+}
+
+/* =====================================================
+   MOBILE ONLY — STACK (< 480px)
+===================================================== */
+@media (max-width: 479px) {
+  .events-header {
+    flex-direction: column;
+    gap: 2vh;
+    text-align: center;
+  }
+
+  .events-heading {
+    height: 15vw;
+  }
+
+  .events-brand {
+    height: 11vw;
+  }
+
+  .events-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .event-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .event-title {
+    height: 7vh;
+  }
+
+  .events-footer img {
+    height: 4.5vh;
+    padding-top: 3vh;
+  }
+}
+@media (max-width: 479px) {
+  .event-title {
+    height: 15vh;
+  }
+}
+@media (max-width: 330px) {
+  .event-title {
+    height: 11vh;
+  }
+}
+
+/* ===============================
+   EVENT CARD HOVER EFFECTS
+================================ */
+
+/* Base transition */
+.event-card {
+  position: relative;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+  will-change: transform;
+}
+
+/* Subtle lift + glow */
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 18px 40px rgba(42, 7, 89, 0.35),
+    0 0 0 1px rgba(170, 90, 255, 0.35);
+  background-color: #f7f0ff;
+}
+
+/* Image micro-zoom */
+.event-card:hover .event-image {
+  transform: scale(1.035);
+}
+
+/* Image transition safety */
+.event-image {
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+
+/* Title emphasis */
+.event-card:hover .event-title {
+  transform: translateY(-2px);
+}
+
+/* Title transition */
+.event-title {
+  transition: transform 0.3s ease;
+}
+
+/* ===============================
+   MOBILE SAFETY (NO HOVER)
+================================ */
+@media (hover: none) {
+  .event-card:hover {
+    transform: none;
+    box-shadow: none;
+    background-color: #f4eaff;
+  }
+
+  .event-card:hover .event-image,
+  .event-card:hover .event-title {
+    transform: none;
+  }
 }

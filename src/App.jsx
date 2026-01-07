@@ -1,7 +1,7 @@
 import About from "./pages/About";
 import Countdown from "./pages/Countdown";
 import Hero from "./pages/Hero";
-{/*import Events from "./pages/Events";*/}
+import Events from "./pages/Events";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Hero />
       <About />
       <Countdown />
-      {/*<Events />*/}
+      <Events />
     </>
   );
 }
