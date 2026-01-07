@@ -8,7 +8,6 @@ export default function EventDetails() {
         <section className="event-details-section">
             <Navbare />
             <div className="event-details-top-line-thin"></div>
-
             <div className="event-details-grid"></div>
 
             <div className="event-details-container">

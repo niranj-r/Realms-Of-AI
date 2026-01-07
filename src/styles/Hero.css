@@ -126,4 +126,7 @@
         bottom: 16px;
         letter-spacing: 3px;
     }
+    .hero-section{
+      max-height: 85vh;
+    }
 }
