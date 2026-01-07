@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import "../styles/Events.css";
+import { Link } from "react-router-dom";
+
 
 import EventsTitle from "../assets/headings/events-title.png";
 import RealmsTitle from "../assets/headings/realms-of-ai.png";
@@ -31,26 +33,26 @@ export default function Events() {
 
                 {/* CARDS */}
                 <div className="events-cards">
-                    <div className="event-card">
+                    <Link to="/neural-canvas" className="event-card">
                         <img src={Event1Img} className="event-image" alt="" />
                         <div className="event-text">
                             <img src={Event1Title} className="event-title" alt="" />
                         </div>
-                    </div>
+                    </Link>
 
-                    <div className="event-card">
+                    <Link to="/script-shift" className="event-card">
                         <img src={Event2Img} className="event-image" alt="" />
                         <div className="event-text">
                             <img src={Event2Title} className="event-title" alt="" />
                         </div>
-                    </div>
+                    </Link>
 
-                    <div className="event-card">
+                    <Link to="/think-trace" className="event-card">
                         <img src={Event3Img} className="event-image" alt="" />
                         <div className="event-text">
                             <img src={Event3Title} className="event-title" alt="" />
                         </div>
-                    </div>
+                    </Link>
                 </div>
 
                 {/* FOOTER */}

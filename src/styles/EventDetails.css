@@ -1,0 +1,164 @@
+/* ===============================
+   ROOT
+================================ */
+.event-details-section {
+  position: relative;
+  min-height: 100vh;
+  background: #2A0759;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ===============================
+   GRID BACKGROUND
+================================ */
+.event-details-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(120, 80, 180, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 80, 180, 0.25) 1px, transparent 1px);
+  background-size: 80px 80px;
+  z-index: 1;
+}
+
+/* ===============================
+   LINES
+================================ */
+.event-details-top-line,
+.event-details-bottom-line {
+  height: 10px;
+  background: #ffffff;
+  z-index: 5;
+}
+
+.event-details-top-line-thin {
+  height: 4px;
+  background: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.event-details-bottom-line-violet {
+  height: 10px;
+  background: #2A0759;
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+.event-details-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 8rem auto;
+  padding: 0 4vw;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ===============================
+   LEFT CARD
+================================ */
+.event-details-left {
+  display: flex;
+  justify-content: center;
+}
+
+.event-details-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 1.5rem;
+  width: 100%;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-details-card-image {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.event-details-card-title {
+  margin-top: 1.2rem;
+  width: 90%;
+}
+
+/* ===============================
+   RIGHT SIDE
+================================ */
+.event-details-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* HEADER BAR */
+.event-details-header-bar {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.25);
+}
+
+.event-details-header-bar img {
+  height: 48px;
+}
+
+.event-details-header-bar button {
+  background: #2A0759;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.8rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+/* CONTENT BOX */
+.event-details-content {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2.2rem;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.25);
+}
+
+.event-details-content h3 {
+  color: #2A0759;
+  margin-bottom: 1rem;
+}
+
+.event-details-content p {
+  color: #3b1a66;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .event-details-container {
+    grid-template-columns: 1fr;
+  }
+
+  .event-details-left {
+    justify-content: center;
+  }
+}
+
+.event-details-content p{
+    text-align: justify;
+}
+
+@media (max-width: 500px) {
+  .event-details-container {
+    margin: 6rem auto;
+  }
+}
