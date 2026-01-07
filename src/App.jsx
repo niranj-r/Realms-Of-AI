@@ -9,7 +9,7 @@ function App() {
       <RealmsHero />
       <About />
       <Countdown />
-      {/*<Events />*/}
+      <Events />
     </>
   );
 }
