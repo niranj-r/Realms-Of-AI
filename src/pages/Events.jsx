@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../styles/Events.css";
 import { Link } from "react-router-dom";
 
@@ -19,8 +19,32 @@ import FooterImg from "../assets/footer/pixel-plot-hack.png";
 
 export default function Events() {
 
+    const eventsRef = useRef(null);
+    const [animate, setAnimate] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setAnimate(true);
+                    observer.disconnect(); // run once
+                }
+            },
+            { threshold: 0.25 }
+        );
+
+        if (eventsRef.current) observer.observe(eventsRef.current);
+
+        return () => observer.disconnect();
+    }, []);
+
+
     return (
-        <section className="events-section" id="events">
+        <section
+            ref={eventsRef}
+            className={`events-section ${animate ? "animate" : ""}`}
+            id="events"
+        >
 
             <div className="events-line"></div>
             <div className="events-grid-overlay"></div>
