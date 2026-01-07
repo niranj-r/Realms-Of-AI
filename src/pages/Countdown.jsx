@@ -5,7 +5,7 @@ import timeLeftImg from "../assets/time-left.png";
 
 const Countdown = () => {
     // SET EVENT DATE HERE
-    const eventDate = new Date("2026-02-01T09:00:00").getTime();
+    const eventDate = new Date("2026-02-01T00:00:00").getTime();
 
     const calculateTimeLeft = () => {
         const now = new Date().getTime();
