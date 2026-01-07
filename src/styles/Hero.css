@@ -76,3 +76,31 @@
   z-index: 0;
   pointer-events: none;
 }
+
+@media (max-width: 768px) {
+
+  /* Title image */
+  .hero-title-img {
+    width: 350px;
+    margin-bottom: 225px;
+  }
+
+/* Robot */
+.hero-robot {
+  position: absolute;
+  height: 82%;
+  bottom: 0;
+  left: 42%;                 /* 🔥 center horizontally */
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+
+  /* Bottom text */
+  .hero-bottom {
+    font-size: 12px;
+    bottom: 16px;
+    letter-spacing: 3px;
+  }
+}
+

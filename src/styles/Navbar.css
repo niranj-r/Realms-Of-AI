@@ -46,3 +46,44 @@
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+
+  .navbar {
+    top: 23px;
+    width: 85%;
+    padding: 10px 14px;
+    border-radius: 40px;
+  }
+
+  .nav-logo {
+    height: 28px;
+  }
+
+  /* Hide links on mobile */
+  .nav-links {
+    display: none;
+  }
+
+  .nav-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    border-radius: 24px;
+  }
+}
+
+/* Default (Desktop) */
+.btn-mobile {
+  display: none;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .btn-desktop {
+    display: none;
+  }
+
+  .btn-mobile {
+    display: inline;
+  }
+}
