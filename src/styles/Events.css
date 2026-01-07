@@ -1,0 +1,138 @@
+/* ===============================
+   ROOT
+================================ */
+.events-section {
+  min-height: 100vh;
+  background: #2A0759;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Grid overlay */
+.events-grid-overlay {
+  position: relative;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(78, 0, 128, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(78, 0, 128, 0.5) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 7;
+}
+
+.events-line {
+  position: relative;
+  top: 1vh;
+  left: 0;
+  width: 100%;
+  height: 1vh;
+  background: #ffffff;
+  z-index: 5;
+}
+
+.events-bottom-line {
+  position: relative;
+  bottom: 1vh;
+  left: 0;
+  width: 100%;
+  height: 1vh;
+  background: #ffffff;
+  z-index: 5;
+}
+
+.events-bottom-line-violet {
+  position: relative;
+  bottom: 0vh;
+  left: 0;
+  width: 100%;
+  height: 1vh;
+  background: #2A0759;
+  z-index: 5;
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+.events-container {
+  margin: 3.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vh;
+  width: 86%;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.events-heading {
+  height: 6.25vw;
+  left: -20px;
+}
+
+.events-brand {
+  height: 4.5vw;
+}
+
+/* ===============================
+   CARDS
+================================ */
+.events-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 75px;
+  align-items: center;
+}
+
+.event-card {
+  background: #f4eaff;
+  border-radius: 18px;
+  padding: 25px 25px 30px 25px;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-image {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.event-text {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.event-title {
+    padding-top: 1.5vh;
+  height: 11vh;
+}
+
+.event-subtitle {
+  height: 14px;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.events-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.events-footer img {
+  height: 2.5vh;
+  padding-top: 3.5vh;
+}
