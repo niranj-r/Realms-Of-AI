@@ -47,6 +47,12 @@
   cursor: pointer;
 }
 
+.nav-btn:hover {
+  background: transparent;
+  border: 2px solid #2b004f;
+  color: #2b004f;
+}
+
 @media (max-width: 768px) {
 
   .navbar {
