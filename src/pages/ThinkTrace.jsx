@@ -61,13 +61,12 @@ export default function EventDetails() {
                             Think Trace is beginner-friendly and open to all. No prior coding experience is
                             required. The competition is especially well-suited for strategic thinkers,
                             students, UX designers, and anyone fascinated by how complex systems operate.
-                            Participants may compete individually or form teams to collaboratively solve
-                            the challenge.
+                            Participants may compete individually to solve the challenge.
                         </p>
 
                         <h4>How to Compete</h4>
                         <p>
-                            Each participant or team will receive a problem statement involving AI logic,
+                            Each participant will receive a problem statement involving AI logic,
                             such as designing a decision-making workflow for an autonomous system operating
                             under constraints. Competitors must analyze the scenario, map out the logical
                             steps the AI should follow, and present the solution using no-code methods. These
